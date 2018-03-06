@@ -1,0 +1,92 @@
+@startuml
+
+' reference links
+' http://plantuml.com/ditaa
+' https://github.com/gboersma/uml-java-doclet
+' 
+skinparam {
+    handwritten true
+    backgroundColor transparent
+    monochrome true
+    shadowing true
+}
+
+hide footbox
+
+Title A Reference Architecture for Chat Bots
+
+actor "Customers" as cust
+
+participant "chat bot application\n(web, mobile, kiosk)" as app_chat_bot
+participant "Identity Service @ API Gateway\n" as svc_idty
+participant "accounts helper bot\n" as acct_bot
+database "logdb" as db_log
+participant "account service\n(vertx verticles)" as svc_acct
+
+note over cust
+    Security is to be covered later & not part of this flow!
+    We'll assume that every user is identified by an auth token / JWT,
+    and every message to the chat bot is sent along with the token!
+
+    ....
+    Note: There can be 1000s of customers trying to chat with the account bot @ the same time!
+    The chat bot needs to be highly scalable.
+    ---
+    basic functions are
+    - connect
+        - bot greets user & awaits for questions / commands
+    - disconnect
+    - help
+    - 
+    - get balance for accounts
+    - get last transaction
+    - get last n transactions
+    ===
+    enhancements:
+    - bot can speak out the account balances using AWS polly
+end note
+
+==V1 : Simple Version using restful APIs & an aggregator service acting as the bot + set of underlying services to process & return data\nSpring Boot or NGnix + Lua==
+cust -> app_chat_bot : launch bot & connect (w credentials)
+app_chat_bot -> svc_idty : auth (credentials)
+svc_idty --> app_chat_bot : auth-token (limited validity ~10mins)
+app_chat_bot -> acct_bot : start session (w auth-token as key)
+acct_bot -> db_log : log (auth-token, userid, start_session, timestamp)
+acct_bot --> app_chat_bot : return greetings
+app_chat_bot --> cust : display greetings
+
+note over app_chat_bot
+    The chat bot app. is stateful & maintains the request/response,
+    & displays it on screen.
+end note
+cust -> app_chat_bot : "show my account balances"
+loop "Retry n times, with a circuit breaker"
+    app_chat_bot -> acct_bot : "show my account balances", auth-token
+    acct_bot -> svc_idty : validate auth-token
+    svc_idty --> acct_bot : auth. result, user_id (if successful)
+    acct_bot -> acct_bot : parse & validate text;\nget verbs ("show"), nouns ("account, balance");\ndiscover service using noun\nmap verbs to service actions ("show -> get");map "my" to user_id
+    acct_bot -> db_log : log (auth-token, userid, chat text, timestamp)
+    acct_bot -> svc_acct : HTTP GET /accounts/*/balance/{user_id}
+    svc_acct --> acct_bot : return balance for all customer accounts as a collection
+    acct_bot -> db_log : log (auth-token, userid, result, timestamp)
+    acct_bot --> app_chat_bot : "your account balances are : " + customer account balance collection []
+end
+app_chat_bot --> cust : display result text
+
+note over acct_bot
+    The chat bot (optionally) keeps track of the session.
+    Otherwise, it just forwards the req. to the underlying service.
+
+    ----
+    Primarily, it implements a DSL, parses & validates the user input.
+    ----
+    Every message from the user is parsed, the nouns (services/resources) & verbs (actions) are separated 
+    and the nouns are used as keys to discover services & the actions are mapped to equivalent HTTP verbs 
+    and executed.
+end note
+
+==V2 : Using CQRS==
+
+==V3 : Using VERTX & Eventbus w HTTP 2.0 Streams==
+
+@enduml
