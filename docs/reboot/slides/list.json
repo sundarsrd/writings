@@ -4,6 +4,8 @@
     "let-s-group.md",
     [
         "the-problem.md",
+        "the-problem-ui.md",
+        "mobile-requirements.md",
         "the-problem-service.md",
         "the-problem-backend.md"
     ],

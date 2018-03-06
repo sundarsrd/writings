@@ -1,4 +1,4 @@
-```February.2018 - March.2018 @ HSC```
+```February.2018 - March.2018```
 
 ----
 
