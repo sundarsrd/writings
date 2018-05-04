@@ -118,10 +118,10 @@
 		// - https://github.com/hakimel/reveal.js#dependencies
 		Reveal.initialize({
 			dependencies: [
-				{ src: 'plugin/markdown/marked.js' },
-				{ src: 'plugin/markdown/markdown.js' },
-				{ src: 'plugin/notes/notes.js', async: true },
-				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+				{ src: '../plugin/markdown/marked.js' },
+				{ src: '../plugin/markdown/markdown.js' },
+				{ src: '../plugin/notes/notes.js', async: true },
+				{ src: '../plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
 			],
 			progress: true,
 			autoslide: 5000,
@@ -142,7 +142,7 @@
 			// can set the series ID and, eventually, the "stripthis" engine root path, like this.
 			//
 			// comicbrowser._settings.server.url="path/to/server.php?seriesid=<your comic id>";
-			comicgenerator._settings.placeholders.server = "dep/st/";
+			comicgenerator._settings.placeholders.server = "../dep/st/";
 		}
 	</script>
 </body>
