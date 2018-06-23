@@ -221,10 +221,13 @@ Leveraging the internet productively
 ### Closer ties between Academia & Industry
 by adopting
 ## CA-CLD
+
+---
+
 ## <span class="fragment" style="color:green"><br>Continuous Awareness</span>
 ##### <span class="fragment" style="color:white">Awareness is the seed of Change (and Action)!</span>
 ## <span class="fragment" style="color:green"><br>Continuous Learning by Doing</span>
-##### <span class="fragment" style="color:white">Doing is Learning (and Gaining Experience)!</span>
+##### <span class="fragment" style="color:white">Doing builds Experience!</span>
 
 ---
 
