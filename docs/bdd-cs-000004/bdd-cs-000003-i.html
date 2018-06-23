@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>interactive comic template</title>
+
+	<link rel="stylesheet" href="../css/reveal.css">
+	<link rel="stylesheet" href="../css/theme/league.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+	<!-- Google Fonts Selection - Sundar -->
+	<link href="https://fonts.googleapis.com/css?family=Cookie|Josefin+Slab:600|Lobster|Shadows+Into+Light+Two" rel="stylesheet">
+
+	<!-- Emoji Font / Css - Sundar (https://afeld.github.io/emoji-css/) -->
+	<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+	<!-- stripthis! -->
+	<link rel="stylesheet" type="text/css" href="../dep/st/font/stylesheet.css" />
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = "../" + window.location.search.match(/print-pdf/) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<!-- 
+		Style overrides!!!
+		Why?!: We have to override the box-shadow around images, to prevent borders in the stripthis images (as part of comicstrip integration)! 
+				https://stackoverflow.com/questions/23082660/how-to-style-images-in-reveal-js 
+		// Don't Change ".reveal section img"
+	-->
+	<style>
+		.reveal section img {
+			background: none;
+			border: none;
+			box-shadow: none;
+		}
+
+		.reveal section h3 {
+			font-family: "Lobster", cursive;
+		}
+
+		.reveal section h6 {
+			font-family: 'Shadows Into Light Two', cursive;
+			font-size: '.05em';
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+			width: auto;
+		}
+
+		/* Added by SRS - for aligning anchors - begin  */
+		.reveal pre {
+			margin: 20px 0px;
+			box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+		}
+		
+		.reveal a {
+			font-family: 'Shadows Into Light Two', cursive;
+			font-size: smaller;
+		}
+		/* Added by SRS - for aligning anchors - end*/
+		
+		</style>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h6>
+					BDD Explorations
+					<sub>
+						<small>CS.05.05.2018.000001</small>
+					</sub>
+				</h6>
+				<section>
+					<textarea class="comicbrowser-render">
+						"Bee Dee Dee!" black
+						<!-- Bianca = Bianca (PM), Kesiev = Drake (Engr), Lara = Diane (Mgr)-->
+						a new office panel 
+						narrator says whispering "One day @ ofc., Drake (Engr.) is thinking aloud about 'BDD'!"
+						kesiev with glasses using mac looking up whispering says to self "Bridging the Digital Divide?!"
+						kesiev same whispering says to self "...Before Dinner Drink?"
+						kesiev rolling eyes replies to self "Beautiful Design Document.. err!?!"
+			
+						a new very large corridor panel
+						narrator says whispering "Bianca (PM) & Diane (Mgr) join!"
+						bianca looking right with mug replies "BDD (Behavior Driven Development) is to requirements as grammer is to english" 
+						bianca same replies "It's effective story telling in a simple language"
+						lara using tablet looking right says "and, provides salvation from the 'dual gumption traps'*"
+						kesiev with glasses serious rolling eyes joined hands looking left shrug replies "in english please!"
+						</textarea>
+					<pre>
+<a href="http://dannorth.net/introducing-bdd/" target="_blank">BDD - Introduction from Dan North (* Behavior & ubiquitous language)</a>
+<a href="https://dannorth.net/whats-in-a-story/" target="_blank">What's in a Story? (* The dual gumption traps)</a>
+<a href="https://dannorth.net/2015/04/03/bdd-by-example/" target="_blank">BDD by Example</a>
+https://www.infoq.com/presentations/bdd-cucumber-groovy
+http://mkolisnyk.github.io/cucumber-reports/
+					</pre>
+				</section>
+				<section>
+					<textarea class="comicbrowser-render">
+						"Bee Dee Dee!" black
+						<!-- Bianca = Bianca (PM), Kesiev = Drake (Engr), Lara = Diane (Mgr)-->
+						a new very large corridor panel
+						narrator says whispering "'Dual Gumption Traps' & other benefits"
+						lara looking right using tablet 
+						lara same replies whispering "1. That\'s not what i asked for!"
+						lara same replies whispering "2. I forgot to tell you about this other thing"
+	
+						bianca looking right palms up replies whispering "The Structured narrative with specific criteria & examples takes all confusions away"
+						bianca same says whispering "stakeholders, engineers, support teams - all speak the same business language"
+	
+						a new very large panic panel
+						kesiev with glasses using mac looking up smiling says "Aha! That's Cool! BDD is intriguing & fascinating for sure!"
+	
+						credits: "(c) 2018 by SivaramaSundar, Framework courtesy by kesiev@stripthis"
+					</textarea>
+					<pre>
+<a href="https://cucumber.io/bdd-benefits.pdf" target="_blank">Kickstart BDD</a>
+<a href="https://dzone.com/articles/a-few-benefits-you-get-by-doing-bdd" target="_blank">Benefits of BDD</a>
+<a href="https://automationpanda.com/2017/02/04/bdd-101-frameworks/" target="_blank">BDD Frameworks</a>
+<a href="https://www.manning.com/books/bdd-in-action" target="_blank">Book: BDD in Action</a>
+					</pre>
+				</section>
+			</section>
+		</div>
+	</div>
+	<!-- jquery & other pre-reqisites ! -->
+	<script src="../lib/js/head.min.js"></script>
+	<script src="../lib/js/jquery.js"></script>
+	<!-- reveal! -->
+	<script src="../js/reveal.js"></script>
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: '../plugin/markdown/marked.js' },
+				{ src: '../plugin/markdown/markdown.js' },
+				{ src: '../plugin/notes/notes.js', async: true },
+				{ src: '../plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			],
+			progress: true,
+			autoslide: 5000,
+			autoslideStoppable: true
+		});
+	</script>
+	<!-- stripthis! -->
+	<script type="text/javascript" src="../dep/st/libs/comicbrowser.js"></script>
+	<script type="text/javascript" src="../dep/st/libs/comicgenerator.js"></script>
+	<script type="text/javascript" src="../dep/st/libs/stencils.js"></script>
+	<script type="text/javascript" src="../dep/st/libs/stencils-kesiev.js"></script>
+	<script type="text/javascript" src="../dep/st/libs/stencils-sandbox.js"></script>
+	<script type="text/javascript" src="../dep/st/libs/stencils-cw.js"></script>
+	<script type="text/javascript" src="../dep/st/libs/stencils-lw.js"></script>
+	<script>
+		function onComicgeneratorConfigure() {
+			// You can change the comicbrowser and comicgenerator configuration here before showing your comic, so you
+			// can set the series ID and, eventually, the "stripthis" engine root path, like this.
+			//
+			// comicbrowser._settings.server.url="path/to/server.php?seriesid=<your comic id>";
+			comicgenerator._settings.placeholders.server = "../dep/st/";
+		}
+	</script>
+</body>
+
+</html>
