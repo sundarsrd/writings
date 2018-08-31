@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>simple comic template</title>
+
+	<!-- Google Fonts Selection - Sundar -->
+	<link href="https://fonts.googleapis.com/css?family=Cookie|Josefin+Slab:600|Lobster|Shadows+Into+Light+Two" rel="stylesheet">
+
+	<!-- Emoji Font / Css - Sundar (https://afeld.github.io/emoji-css/) -->
+	<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+	<!-- stripthis! -->
+	<link rel="stylesheet" type="text/css" href="../dep/st/font/stylesheet.css" />
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = "../" + window.location.search.match(/print-pdf/) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<style>
+		section img {
+			background: none;
+			border: none;
+			box-shadow: none;
+		}
+
+		section h3 {
+			font-family: "Lobster", cursive;
+		}
+
+		section h6 {
+			margin: 0px;
+			font-family: 'Shadows Into Light Two', cursive;
+			font-size: x-large;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+			width: auto;
+		}
+
+		/* Added by SRS - for aligning anchors - begin  */
+		section pre {
+			margin: 20px 0px;
+			box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+		}
+
+		section a {
+			font-family: 'Shadows Into Light Two', cursive;
+			font-size: smaller;
+		}
+
+		/* Added by SRS - for aligning anchors - end*/
+	</style>
+	<div>
+		<section>
+			<h6>
+				BDD Explorations
+				<sub>
+					<small>CS.05.05.2018.000001</small>
+				</sub>
+			</h6>
+			<section>
+				<textarea class="comicbrowser-render">
+					"BDD Love!" black
+					<!-- Bianca = Bianca (PM), Kesiev = Drake (Engr), Lara = Diane (Mgr)-->
+					a new office panel 
+					narrator says whispering "BDD Love in reality!"
+					lara with glasses using tablet looking right whispering replies "Hey DL, isn't BDD awesome?"
+					bianca looking left with mug and an evil smile replies "Yeah!!! can't agree more!"
+					bianca same says "As a PO, I Want BDD to go away" 
+					bianca same says "So That I will have a better work life balance!"
+
+					another office panel 
+					lara using tablet serious with glasses rolling eyes looking up replies whispering to self "*dumbstruck*!"
+		
+					another office panel
+					narrator says whispering "recovering..."
+					lara looking right with glasses using tablet confused face replies to self "err... what, seriously??"
+					bianca looking left with mug replies serious "Ah kidding! the other two amigos need a job eh!"
+
+					a new hypnotic panel
+					somebody says to self, loud "Thus brings BDD in empathy and collaboration!" 
+
+					credits: "(c) 2018 by SivaramaSundar, Framework courtesy by kesiev@stripthis"
+				</textarea>
+			</section>
+		</section>
+	</div>
+	<!-- stripthis! -->
+	<script type="text/javascript" src="../dep/st/libs/comicbrowser.js"></script>
+	<script type="text/javascript" src="../dep/st/libs/comicgenerator.js"></script>
+	<script type="text/javascript" src="../dep/st/libs/stencils.js"></script>
+	<script type="text/javascript" src="../dep/st/libs/stencils-kesiev.js"></script>
+	<script type="text/javascript" src="../dep/st/libs/stencils-sandbox.js"></script>
+	<script type="text/javascript" src="../dep/st/libs/stencils-cw.js"></script>
+	<script type="text/javascript" src="../dep/st/libs/stencils-lw.js"></script>
+	<script>
+		function onComicgeneratorConfigure() {
+			// You can change the comicbrowser and comicgenerator configuration here before showing your comic, so you
+			// can set the series ID and, eventually, the "stripthis" engine root path, like this.
+			//
+			// comicbrowser._settings.server.url="path/to/server.php?seriesid=<your comic id>";
+			comicgenerator._settings.placeholders.server = "../dep/st/";
+		}
+	</script>
+</body>
+
+</html>
