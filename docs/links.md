@@ -13,3 +13,5 @@
 
 * :link: [disi.unal.edu.co](http://disi.unal.edu.co/dacursci/sistemasycomputacion/docs/SWEBOK/)
 * :link: [ocw.tudelft.nl](https://ocw.tudelft.nl/wp-content/uploads) 
+* :link: [npu.edu.ua books](https://www.google.co.in/search?q=site:npu.edu.ua+ext:pdf+book)
+* :link: [free management ebooks](https://www.google.co.in/search?q=site%3Ahttps%3A%2F%2Ffree-management-ebooks.com+ext%3Apdf)
