@@ -4,10 +4,10 @@ scene {
 
 @font-face {
   font-family: 'xkcd';
-  src: url('/fonts/xkcd.eot');
-  src: url('/fonts/xkcd.eot?#iefix') format('embedded-opentype'),
-       url('/fonts/xkcd.woff') format('woff'),
-       url('/fonts/xkcd.ttf') format('tff');
+  src: url('fonts/xkcd.eot');
+  src: url('fonts/xkcd.eot?#iefix') format('embedded-opentype'),
+       url('fonts/xkcd.woff') format('woff'),
+       url('fonts/xkcd.ttf') format('tff');
   font-weight: normal;
   font-style: normal;
 }
